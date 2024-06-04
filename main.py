@@ -3,28 +3,14 @@ from flask_pymongo import PyMongo
 
 from openai import OpenAI
 import os
-# Assuming you've set your API key securely (see previous explanation)
-api_key = os.getenv("OPENAI_API_KEY","")  # Retrieve from environment variable
+api_key = os.getenv("OPENAI_API_KEY","Your_API_KEY")  # Retrieve from environment variable
 client = OpenAI(api_key=api_key)  # Create client object
 
 
 
 
-
-
-# from openai import OpenAI
-# client = OpenAI("sk-proj-5UgVekBfqZBFLGrRqqdJT3BlbkFJrkbtSbB3oZYE3jt4bWKG")
-
-
-
-
-# openai.api_key = "sk-proj-5UgVekBfqZBFLGrRqqdJT3BlbkFJrkbtSbB3oZYE3jt4bWKG"
-
-
-
-
 app = Flask(__name__)
-app.config["MONGO_URI"] = "mongodb://localhost:27017/chatgpt"
+app.config["MONGO_URI"] = "your mongodb address"
 mongo = PyMongo(app)
 
 @app.route("/")
